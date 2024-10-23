@@ -46,7 +46,7 @@ class InputHandler {
     }
 
     getRobot() {
-        return this.robot();
+        return this.robot;
     }
 
 }
