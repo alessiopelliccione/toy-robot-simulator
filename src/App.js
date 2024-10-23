@@ -1,24 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import InputHandler from './InputHandler';
+import AppView from './AppView';
 
 function App() {
+
+  const [inputCommands, setInputCommands] = useState('');
+  const [output, setOutput] = useState('');
+  const [robot, setRobot] = useState(null);
+
+  const executeCommands = () => {
+    const inputHandler = new InputHandler;
+    const outputText = inputHandler.executeCommands(inputCommands);
+    setOutput(outputText);
+    setRobot(inputHandler.getRobot());
+    console.log(outputText);
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <AppView
+      inputCommands={inputCommands}
+      setInputCommands={setInputCommands}
+      executeCommands={executeCommands}
+      output={output}
+      robot={robot}
+    />
   );
 }
 
