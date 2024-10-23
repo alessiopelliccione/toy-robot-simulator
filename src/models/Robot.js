@@ -12,7 +12,7 @@ class Robot {
 
     // Places the robot on the table at position (x, y) facing direction f
     place(x, y, f) {
-        if (this.canMove && DIRECTIONS.includes(f)) {
+        if (this.canMove(x, y) && DIRECTIONS.includes(f)) {
             this.x = x;
             this.y = y;
             this.f = f;
@@ -50,7 +50,7 @@ class Robot {
 
     // Moves the robot one unit forward in the direction it is currently facing
     move() {
-        if (!this.isPlaced) return;
+        if (!this.isPlaced || !this.canMove(this.x, this.y)) return;
 
         switch (this.f) {
             case 'NORTH':
@@ -72,8 +72,8 @@ class Robot {
     }
 
     // Helper method to validate if a position is within the table boundaries
-    canMove() {
-        return this.x >= 0 && this.x < TABLE_SIZE && this.y >= 0 && this.y < TABLE_SIZE;
+    canMove(x, y) {
+        return x >= 0 && x < TABLE_SIZE && y >= 0 && y < TABLE_SIZE;
     }
 
 }
