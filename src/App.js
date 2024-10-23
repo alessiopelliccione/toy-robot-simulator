@@ -6,14 +6,24 @@ function App() {
 
   const [inputCommands, setInputCommands] = useState('');
   const [output, setOutput] = useState('');
+  const [error, setError] = useState('');
   const [robot, setRobot] = useState(null);
 
   const executeCommands = () => {
     const inputHandler = new InputHandler;
     const outputText = inputHandler.executeCommands(inputCommands);
-    setOutput(outputText);
-    setRobot(inputHandler.getRobot());
-    console.log(outputText);
+    const errorMessage = inputHandler.getError();
+
+    if (errorMessage) {
+      setError(errorMessage);
+      setOutput('');
+      setRobot(null);
+    } else {
+      setError('');
+      setOutput(outputText);
+      setRobot(inputHandler.getRobot());
+    }
+    
   }
 
   return (
@@ -23,6 +33,7 @@ function App() {
       executeCommands={executeCommands}
       output={output}
       robot={robot}
+      error={error}
     />
   );
 }

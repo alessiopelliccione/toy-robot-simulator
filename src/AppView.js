@@ -1,6 +1,7 @@
 import React from "react";
+import ErrorHandler from "./ErrorHandler";
 
-function AppView({ inputCommands, setInputCommands, executeCommands, output}) {
+function AppView({ inputCommands, setInputCommands, executeCommands, output, error}) {
     return (
         <div className="App">
             <h1>Toy Robot Simulator - Alessio Pelliccione - Full Stack Developer</h1>
@@ -13,6 +14,7 @@ function AppView({ inputCommands, setInputCommands, executeCommands, output}) {
             ></textarea>
             <br />
             <button onClick={executeCommands}>Execute</button>
+            <ErrorHandler error={error} />
             {output && (
                 <div>
                     <h2>Output:</h2>
