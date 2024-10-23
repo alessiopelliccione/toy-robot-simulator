@@ -3,8 +3,8 @@ import { PLACE, MOVE, RIGHT, LEFT, REPORT } from '../constants/commands';
 import { TABLE_SIZE, DIRECTIONS } from '../constants/constants';
 
 class InputHandler {
-    constructor() {
-        this.robot = new Robot();
+    constructor(robot) {
+        this.robot = robot;
         this.outputText = '';
         this.errorMessage = '';
     }

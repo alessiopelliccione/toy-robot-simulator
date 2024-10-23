@@ -68,6 +68,7 @@ class Robot {
             default:
                 break;
         }
+
     }
 
     // Helper method to validate if a position is within the table boundaries
