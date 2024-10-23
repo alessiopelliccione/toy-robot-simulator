@@ -1,4 +1,3 @@
-import { tab } from "@testing-library/user-event/dist/tab";
 import { DIRECTIONS, TABLE_SIZE } from "./constants";
 
 class Robot {
@@ -26,13 +25,14 @@ class Robot {
         if (this.isPlaced) {
             return `${this.x},${this.y},${this.f}`;
         } else {
-            return 'NOT PLACED';
+            return;
         }
     }
 
     // Rotates the robot 90 degrees to the left
     left() {
         if (!this.isPlaced) return;
+
         const index = DIRECTIONS.indexOf(this.f);
 
         // Calculate the new index by subtracting 1 (adding 3 modulo 4 to handle negative indices)
