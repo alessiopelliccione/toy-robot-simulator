@@ -1,4 +1,4 @@
-import { DIRECTIONS, TABLE_SIZE } from "./constants";
+import { DIRECTIONS, TABLE_SIZE } from "../constants/constants";
 
 class Robot {
 

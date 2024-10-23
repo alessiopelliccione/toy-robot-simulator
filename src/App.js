@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import InputHandler from './InputHandler';
-import AppView from './AppView';
+import InputHandler from './models/InputHandler';
+import AppView from './components/AppView';
 
 function App() {
 

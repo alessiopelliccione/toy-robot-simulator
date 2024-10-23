@@ -1,6 +1,6 @@
 import Robot from './Robot';
-import { PLACE, MOVE, RIGHT, LEFT, REPORT } from './commands';
-import { TABLE_SIZE, DIRECTIONS } from './constants';
+import { PLACE, MOVE, RIGHT, LEFT, REPORT } from '../constants/commands';
+import { TABLE_SIZE, DIRECTIONS } from '../constants/constants';
 
 class InputHandler {
     constructor() {
