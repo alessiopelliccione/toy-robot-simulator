@@ -1,5 +1,5 @@
 export const PLACE = 'PLACE';
-export const MOVE = 'PLACE';
-export const LEFT = 'PLACE';
-export const RIGHT = 'PLACE';
-export const REPORT = 'PLACE';
+export const MOVE = 'MOVE';
+export const LEFT = 'LEFT';
+export const RIGHT = 'RIGHT';
+export const REPORT = 'REPORT';
