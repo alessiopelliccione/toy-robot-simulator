@@ -12,6 +12,12 @@ describe('InputHandler', () => {
         inputHandler = new InputHandler(robot);
     });
 
+    test ('should return error when missing arguments', () => {
+        const result = inputHandler.executeCommands('PLACE');
+        expect(inputHandler.getError()).toBe(`Missing arguments for PLACE command: PLACE`);
+        expect(result).toBe(null);
+    })
+
     test('should correctly handle PLACE command with valid input', () => {
         const result = inputHandler.executeCommands(`PLACE 1,2,NORTH\nREPORT`);
         expect(result).toBe('1,2,NORTH');

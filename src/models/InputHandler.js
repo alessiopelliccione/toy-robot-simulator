@@ -63,7 +63,6 @@ class InputHandler {
                         break;
                     default:
                         throw new Error(`Invalid command: ${line}`);
-                        break;
                 }
             });
 
