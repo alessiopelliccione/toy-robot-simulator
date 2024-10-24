@@ -17,7 +17,7 @@ class Robot {
             this.y = y;
             this.f = f;
             this.isPlaced = true;
-        } {
+        } else {
             return;
         }
     }
