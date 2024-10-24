@@ -17,6 +17,8 @@ class Robot {
             this.y = y;
             this.f = f;
             this.isPlaced = true;
+        } {
+            return;
         }
     }
 
@@ -54,21 +56,28 @@ class Robot {
 
         switch (this.f) {
             case 'NORTH':
-                this.y += 1;
+                if (this.y + 1 < TABLE_SIZE) {
+                    this.y += 1;
+                }
                 break;
             case 'EAST':
-                this.x += 1;
+                if (this.x + 1 < TABLE_SIZE) {
+                    this.x += 1;
+                }
                 break;
             case 'SOUTH':
-                this.y -= 1;
+                if (this.y - 1 >= 0) {
+                   this.y -= 1; 
+                }
                 break;
             case 'WEST':
-                this.x -= 1;
+                if (this.x - 1 >= 0) {
+                    this.x -= 1;
+                }
                 break;
             default:
                 break;
         }
-
     }
 
     // Helper method to validate if a position is within the table boundaries
