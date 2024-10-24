@@ -35,6 +35,20 @@ describe('Robot', () => {
         expect(report).toBe('1,0,EAST');
     });
 
+    test('should move the robot correctly when facing WEST', () => {
+      robot.place(1, 0, 'WEST');
+      robot.move();
+      const report = robot.report();
+      expect(report).toBe('1,0,WEST');
+  });
+
+  test('should move the robot correctly when facing SOUTH', () => {
+    robot.place(0, 1, 'SOUTH');
+    robot.move();
+    const report = robot.report();
+    expect(report).toBe('0,0,SOUTH');
+});
+
     test('should prevent the robot from moving off the table', () => {
         robot.place(0, 0, 'SOUTH');
         robot.move();
@@ -97,4 +111,5 @@ describe('Robot', () => {
         const report = robot.report();
         expect(report).toBeUndefined(); // No placement means no valid report
     });
+
 });
