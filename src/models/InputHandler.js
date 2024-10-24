@@ -47,9 +47,6 @@ class InputHandler {
                         }
                         break;
                     case MOVE:
-                        if (!this.robot.canMove(this.x, this.y)) {
-                            throw new Error("The robot cannot proceed in the current direction.");
-                        }
                         this.robot.move();
                         break;
                     case LEFT:
